@@ -13,5 +13,6 @@ api.start = options => {
 };
 
 api.set = config.set;
-api.stop = () => require('./server/app').process.close();
+api.app = require('./server/app');
+api.stop = () => api.app.process.close();
 module.exports = api;
